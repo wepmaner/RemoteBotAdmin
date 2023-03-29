@@ -1,4 +1,4 @@
-token = ''
+token = 'dsddd'
 
 admin_ids = []
 
