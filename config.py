@@ -1,4 +1,3 @@
-
 token = ''
 
 admin_ids = []
