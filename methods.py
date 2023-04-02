@@ -36,25 +36,25 @@ def get_status_low(name:str) -> str:
     text = f'{name}\n\n{active_text}\n{memory_txt}'
     return text
 
-def get_status_low(name:str) -> str:
-    result = service_cmd('status', name)
-    name_match = re.search('\*(?:\s\S+)+', result)
-    name = name_match.group() if name_match else ''
+# def get_status_low(name:str) -> str:
+#     result = service_cmd('status', name)
+#     name_match = re.search('\*(?:\s\S+)+', result)
+#     name = name_match.group() if name_match else ''
     
-    active_match = re.search('Active:\s(\S+)\s\((\S+)\)', result)
-    if active_match:
-        state = active_match.group(1)
-        if state == 'active':
-            active_text = '🟢 Работает'
-        elif state == 'inactive':
-            active_text = '☠️ Не активен'
-        else:
-            active_text = '🔴 Ошибка'
-    else:
-        active_text = f'Статус неизвестен ({result})'
+#     active_match = re.search('Active:\s(\S+)\s\((\S+)\)', result)
+#     if active_match:
+#         state = active_match.group(1)
+#         if state == 'active':
+#             active_text = '🟢 Работает'
+#         elif state == 'inactive':
+#             active_text = '☠️ Не активен'
+#         else:
+#             active_text = '🔴 Ошибка'
+#     else:
+#         active_text = f'Статус неизвестен ({result})'
 
-    memory_match = re.search('Memory:\s(\S+)', result)
-    memory_txt = f'💾 Память: {memory_match.group(1)}' if memory_match else ''
+#     memory_match = re.search('Memory:\s(\S+)', result)
+#     memory_txt = f'💾 Память: {memory_match.group(1)}' if memory_match else ''
 
-    return f'{name}\n\n{active_text}\n{memory_txt}'
+#     return f'{name}\n\n{active_text}\n{memory_txt}'
 
