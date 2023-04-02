@@ -4,6 +4,7 @@
 # Настройка
 
 Установка зависимостей:
+
 `pip install -r requirements.txt`
 
 Настраиваем файл config.py
